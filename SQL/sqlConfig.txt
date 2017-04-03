@@ -1,0 +1,4 @@
+user:dbProject
+password:dbProject
+host:dbproject.ctbyf0mr6g0z.us-west-2.rds.amazonaws.com
+database:dbProject

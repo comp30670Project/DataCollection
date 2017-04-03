@@ -1,0 +1,1 @@
+mysql -h dbproject.ctbyf0mr6g0z.us-west-2.rds.amazonaws.com -P 3306 -u dbProject -p dbProject
