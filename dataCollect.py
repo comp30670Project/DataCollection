@@ -36,7 +36,6 @@ def scrapeData(configFile, apiDB, apiOW):
 		except:
 
 			# wait one minute until trying again
-			print("sleeping for exception")
 			time.sleep(60)
 
 
