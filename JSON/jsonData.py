@@ -2,8 +2,6 @@
 import time
 from JSON.jsonDB import DublinBikes
 from JSON.jsonOW import OpenWeather
-# from jsonDB import DublinBikes
-# from jsonOW import OpenWeather
 
 class ProjectData():
 

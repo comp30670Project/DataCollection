@@ -40,6 +40,7 @@ class OpenWeather():
 		# imports
 		import json
 		import urllib.request
+		import time
 
 		# url
 		urlRoot = "http://api.openweathermap.org/data/2.5/weather?"
@@ -50,9 +51,17 @@ class OpenWeather():
 		url = urlRoot + urlUnits + urlLat + urlLon + api
 
 		# get data
-		with urllib.request.urlopen(url) as response:
-			stringData = response.read()
-			dictData = json.loads(stringData)
+		got_data = False
+		while got_data is False:
+			try:
+
+				with urllib.request.urlopen(url) as response:
+					stringData = response.read()
+					dictData = json.loads(stringData)
+					got_data = True
+			except:
+				# api may be down; sleep and try again
+				time.sleep(60)
 
 		# collect data from ow
 		ow_weather = dictData['weather'][0] # dictionary object
@@ -80,7 +89,7 @@ class OpenWeather():
 		return ow
 
 # # Open Weather Tests
-# ow = OpenWeather("owAPI.txt")
+# ow = OpenWeather("apiOW.txt")
 # api = ow.apiKey()
 # print(api)
 # data = ow.getData(9, 135)

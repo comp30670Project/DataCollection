@@ -1,0 +1,83 @@
+JSON
+	code
+		DB
+			Admin
+				api
+			Python
+				getData
+					url
+						apiKey
+					get data
+						json data acquisition
+						python list format
+					modify data
+						coordinates
+						updates
+						boolean to sql
+						status to sql
+		OW
+			Admin
+				api
+			Python
+				url
+					apiKey
+				get data
+					json data acquisition --> python list format
+					select desired data
+					make data object
+				modification
+					convern sunrise and sunset time format
+	test
+		DB
+			run on OH, CW, CK machines
+		OW
+			run on OH, CW, CK machines
+
+SQL
+	code
+		sqlConfig
+			create class to generate sql configuration file
+		sqlTable
+			create
+				connect to database
+				use database
+				sql command to create table
+				try/except mechanism
+			add data
+				sql command to add data
+				python code to iterate over results of jsonData.py and put into database
+	test
+		run on OH, CW, CK machines
+
+Combined
+	code
+		JSON
+			get DB data
+			for each element of DB data, get OW data
+				OW 60 calls per minute accommodation
+				combine data
+		Program
+			getData
+				create (or acknowledge existence of) table
+				get the the combined data
+				add data to the sql table
+			scrapeData
+				set timer to getData every five minutes
+	test
+		run on OH, CW, CK machines
+
+Set Up
+	create a set up file
+
+Server
+	load
+		clone git repo
+		set up
+	run
+		run file
+		make run in background
+		make run even when closing terminal
+
+Extra
+	try request at main level (solves isses)
+		

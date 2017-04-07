@@ -112,15 +112,29 @@ class DublinBikes():
 		# imports
 		import json
 		import urllib.request
+		import urllib.error
+		import time
 
 		# url
 		api = self.apiKey()
 		url = "https://api.jcdecaux.com/vls/v1/stations?contract=Dublin" + api
 
 		# get data
-		with urllib.request.urlopen(url) as response:
-			stringData = response.read()
-			listData = json.loads(stringData)
+		got_data = False
+		
+		while got_data is False:
+
+			try:
+				with urllib.request.urlopen(url) as response:
+					stringData = response.read()
+					listData = json.loads(stringData)
+
+				got_data = True
+			
+			except:
+				# DB api may be down or otherwise inaccessible; give it some time
+				time.sleep(60)
+
 
 		# modifications
 		for d in listData:
@@ -134,7 +148,7 @@ class DublinBikes():
 	
 
 # # DublinBikes tests
-# db = DublinBikes("dbAPI.txt")
+# db = DublinBikes("apiDB.txt")
 # dbKey = db.apiKey()
 # dbData = db.getData()
 # print(dbKey)

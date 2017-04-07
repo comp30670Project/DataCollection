@@ -21,15 +21,24 @@ def scrapeData(configFile, apiDB, apiOW):
 
 	while True:
 
-		# set the start time
-		start = time.time()
+		try:
 
-		# getData
-		getData(configFile, apiDB, apiOW)
+			# set the start time
+			start = time.time()
 
-		# cycle every five minutes
-		wait = max(0, 300 - time.time() + start)
-		time.sleep(wait)
+			# getData
+			getData(configFile, apiDB, apiOW)
+
+			# cycle every five minutes
+			wait = max(0, 300 - time.time() + start)
+			time.sleep(wait)
+
+		except:
+
+			# wait one minute until trying again
+			print("sleeping for exception")
+			time.sleep(60)
+
 
 # make sure the program only runs as a stand alone entity; not as an add on
 if __name__ == '__main__':
