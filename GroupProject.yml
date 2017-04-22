@@ -192,3 +192,4 @@ dependencies:
   - rope-py3k==0.9.4.post1
   - tables==3.3.0
 prefix: /Users/ojh/anaconda3/envs/GroupProject
+
