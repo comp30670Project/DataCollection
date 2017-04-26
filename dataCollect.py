@@ -15,7 +15,6 @@ def getData(configFile, apiDB, apiOW):
 	# populate the SQL table
 	projectTable.add_data(jsonData)
 
-# getData("SQL/sqlConfig.txt", "JSON/apiDB.txt", "JSON/apiOW.txt")
 
 def scrapeData(configFile, apiDB, apiOW):
 
