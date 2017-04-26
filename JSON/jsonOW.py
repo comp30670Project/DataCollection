@@ -87,10 +87,3 @@ class OpenWeather():
 		
 		# return
 		return ow
-
-# # Open Weather Tests
-# ow = OpenWeather("apiOW.txt")
-# api = ow.apiKey()
-# print(api)
-# data = ow.getData(9, 135)
-# print(data)
