@@ -145,11 +145,3 @@ class DublinBikes():
 
 		# output
 		return listData
-	
-
-# # DublinBikes tests
-# db = DublinBikes("apiDB.txt")
-# dbKey = db.apiKey()
-# dbData = db.getData()
-# print(dbKey)
-# print(dbData)
